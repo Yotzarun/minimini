@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Babe</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(180deg,#dff4ff,#eef9ff,#ffffff);color:#3b5b7a;display:flex;justify-content:center;align-items:center;min-height:100vh;overflow:hidden}
+.card{background:rgba(255,255,255,.75);backdrop-filter:blur(8px);padding:40px;border-radius:28px;box-shadow:0 15px 40px rgba(120,170,220,.25);max-width:700px;text-align:center;position:relative}
+h1{font-size:3rem;margin:0;color:#6aaed6}
+p{font-size:1.2rem;line-height:1.7;margin:18px 0}
+.heart{font-size:2rem;animation:float 2s ease-in-out infinite}
+button{background:#9ed8f7;color:#fff;border:none;padding:14px 26px;border-radius:999px;font-size:1rem;cursor:pointer;box-shadow:0 8px 20px rgba(106,174,214,.35);transition:.25s}
+button:hover{transform:translateY(-2px);background:#89cfee}
+.hidden{display:none;margin-top:20px;font-size:1.15rem;color:#4a6f92}
+.bubble{position:absolute;border-radius:50%;background:rgba(158,216,247,.35);animation:rise 12s linear infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes rise{0%{transform:translateY(100vh) scale(.5);opacity:0}20%{opacity:1}100%{transform:translateY(-120px) scale(1.2);opacity:0}}
+</style>
+</head>
+<body>
+<div class="card">
+<div class="heart">🩵</div>
+<h1>Happy Babe Day Na</h1>
+<p>Today is all about you — your smile, your warmth, and the happiness you bring into my life. I hope this year gives you everything your heart wishes for na.</p>
+<button onclick="showMessage()">Open My Wish</button>
+<div id="msg" class="hidden">You are the best person, safe place to many people luey, Thank you for existing on this world na. <nav></nav> Happy birthday na babe.🩵</div>
+</div>
+<script>
+function showMessage(){document.getElementById('msg').style.display='block';}
+for(let i=0;i<18;i++){
+ const b=document.createElement('div');
+ b.className='bubble';
+ b.style.width=(20+Math.random()*50)+'px';
+ b.style.height=b.style.width;
+ b.style.left=Math.random()*100+'vw';
+ b.style.animationDuration=(7+Math.random()*8)+'s';
+ b.style.animationDelay=Math.random()*6+'s';
+ document.body.appendChild(b);
+}
+</script>
+</body>
+</html>
